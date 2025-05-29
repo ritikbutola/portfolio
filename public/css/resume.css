@@ -1,0 +1,269 @@
+/* Resume Page Styles */
+.resume-page {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.resume-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    overflow: hidden;
+    min-height: calc(100vh - 8rem);
+}
+
+/* Sidebar Styles */
+.resume-sidebar {
+    width: 250px;
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem 0;
+    border-right: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.resume-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resume-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.resume-nav a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+}
+
+.resume-nav a i {
+    margin-right: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.resume-nav a:hover {
+    background: rgba(0, 255, 136, 0.1);
+    border-left-color: var(--accent-color);
+}
+
+.resume-nav a.active {
+    background: rgba(0, 255, 136, 0.1);
+    border-left-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Content Styles */
+.resume-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    position: relative;
+}
+
+.resume-section {
+    display: none;
+}
+
+/* Section Headers */
+.resume-section h2 {
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent-color);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 2px solid var(--primary-color);
+}
+
+.timeline-content {
+    background: rgba(26, 26, 26, 0.5);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.timeline-content h3 {
+    color: var(--accent-color);
+    margin: 0 0 0.5rem;
+}
+
+.timeline-content h4 {
+    color: var(--text-color);
+    margin: 0 0 0.5rem;
+    font-weight: normal;
+}
+
+.timeline-date, .timeline-location {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: rgba(26, 26, 26, 0.5);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.skill-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 4px;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+/* Awards Grid */
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.award-item {
+    background: rgba(26, 26, 26, 0.5);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.award-icon {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.award-content h3 {
+    color: var(--accent-color);
+    margin: 0 0 0.5rem;
+}
+
+.award-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+/* Add delay to timeline items and award items for staggered animation */
+.timeline-item:nth-child(1) { transition-delay: 0.1s; }
+.timeline-item:nth-child(2) { transition-delay: 0.2s; }
+.timeline-item:nth-child(3) { transition-delay: 0.3s; }
+
+.award-item:nth-child(1) { transition-delay: 0.1s; }
+.award-item:nth-child(2) { transition-delay: 0.2s; }
+.award-item:nth-child(3) { transition-delay: 0.3s; }
+.award-item:nth-child(4) { transition-delay: 0.4s; }
+
+.skill-category:nth-child(1) { transition-delay: 0.1s; }
+.skill-category:nth-child(2) { transition-delay: 0.2s; }
+.skill-category:nth-child(3) { transition-delay: 0.3s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column;
+    }
+
+    .resume-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+    }
+
+    .resume-nav {
+        display: flex;
+        overflow-x: auto;
+        padding: 0 1rem;
+    }
+
+    .resume-nav li {
+        flex: 0 0 auto;
+    }
+
+    .resume-nav a {
+        padding: 1rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .resume-nav a.active {
+        border-left: none;
+        border-bottom-color: var(--accent-color);
+    }
+} 

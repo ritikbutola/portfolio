@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritik Butola - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <button class="dropdown-button" onclick="toggleMenu()" style="order: 1;">☰</button>
+        <div class="nav-brand" style="order: 2; text-align: center;">Ritik Butola</div>
+        <ul class="nav-links">
+            <li><a href="/" >Home</a></li>
+            <li><a href="/learning.html">Learning</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/resume.html">Resume</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </nav>
+    <div id="activeTab" class="active-tab" style="text-align: center;"></div>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>butola.ritik98@gmail.com</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+91 7818956475</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Dehradun, Uttarakhand, India</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/ritikbutola" class="social-icon" title="GitHub" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ritik-butola/" class="social-icon" title="LinkedIn" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon" title="LeetCode" target="_blank">
+                            <i class="fas fa-code"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .contact-page {
+            padding: 8rem 2rem 4rem;
+            min-height: 100vh;
+            background: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+        }
+
+        .contact-form-container {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--secondary-color);
+            color: var(--text-color);
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+        }
+
+        .submit-btn {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-page {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            const dropdown = document.querySelector('.dropdown-content');
+            if (dropdown) {
+                dropdown.style.display = (dropdown.style.display === 'block' ? 'none' : 'block');
+            }
+        }
+        function setActiveTab() {
+            const path = window.location.pathname;
+            const activeTabElement = document.getElementById('activeTab');
+            if (path.includes('learning')) activeTabElement.textContent = 'Learning';
+            else if (path.includes('about')) activeTabElement.textContent = 'About';
+            else if (path.includes('resume')) activeTabElement.textContent = 'Resume';
+            else if (path.includes('work')) activeTabElement.textContent = 'Projects';
+            else if (path.includes('contact')) activeTabElement.textContent = 'Contact';
+            else activeTabElement.textContent = 'Home';
+            activeTabElement.classList.add('highlighted');
+        }
+        window.onload = setActiveTab;
+        const dropdownContent = document.createElement('div');
+        dropdownContent.className = 'dropdown-content';
+        dropdownContent.innerHTML = '<a href="/" id="homeLink">Home</a><a href="/learning.html" id="learningLink">Learning</a><a href="/about.html" id="aboutLink">About</a><a href="/resume.html" id="resumeLink">Resume</a><a href="/work.html" id="projectsLink">Projects</a><a href="/contact.html" id="contactLink">Contact</a>';
+        document.querySelector('.navbar').appendChild(dropdownContent);
+    </script>
+    <!-- Comment out the script that attempts to POST to /api/contact, as it's not supported in a static Netlify deployment -->
+    /*
+    <script>
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    e.target.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                alert('Error sending message. Please try again later.');
+                console.error('Error:', error);
+            }
+        });
+    </script>
+    */
+</body>
+</html> 

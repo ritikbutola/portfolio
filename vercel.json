@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "public/**",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      { "src": "/", "dest": "/public/index.html" },
+      { "src": "/about", "dest": "/public/about.html" },
+      { "src": "/resume", "dest": "/public/resume.html" },
+      { "src": "/work", "dest": "/public/work.html" },
+      { "src": "/contact", "dest": "/public/contact.html" },
+      { "src": "/(.*)", "dest": "/public/$1" }
+    ]
+  }

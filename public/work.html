@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Ritik Butola</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <button class="dropdown-button" onclick="toggleMenu()" style="order: 1;">☰</button>
+        <div class="nav-brand" style="order: 2; text-align: center;">Ritik Butola</div>
+        <ul class="nav-links">
+            <li><a href="/" >Home</a></li>
+            <li><a href="/learning.html">Learning</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/resume.html">Resume</a></li>
+            <li><a href="/work.html" class="active">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </nav>
+    <div id="activeTab" class="active-tab" style="text-align: center;"></div>
+
+    <!-- Projects Section -->
+    <section class="projects-page">
+        <div class="container">
+            <h1>My <span class="highlight">Projects</span></h1>
+            
+            <div class="project-grid">
+                <!-- Foolproof Attendance System -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Foolproof Attendance Management</h3>
+                        <p><strong>March 2024 – May 2024</strong><br>
+                        Built a Foolproof Attendance Management System using Node.js, Express.js, HTML, CSS, and JavaScript, integrating Face API for real-time facial recognition and secure user authentication, ensuring accurate and automated attendance tracking.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Face API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ritikbutola/Foolproof-Automated-Attendance-System" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Health Monitoring System -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Smart Health Monitoring System</h3>
+                        <p>IoT-based health monitoring system that tracks vital signs in real-time. Features include heart rate monitoring, temperature sensing, and emergency alert system with mobile app integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ritikbutola/health-monitor" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Mentor AI -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Code Mentor AI</h3>
+                        <p>An AI-powered coding assistant that helps developers write better code. Features include code review, bug detection, optimization suggestions, and automated documentation generation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ritikbutola/code-mentor-ai" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modern Portfolio Website -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>ePortfolio Website | Personal Web Application</h3>
+                        <p><strong>March 2025 – April 2025</strong><br>
+                        Developed a responsive personal portfolio using HTML, CSS, and JavaScript with a Node.js + Express.js backend. Showcases projects, skills, and contact form with clean UI and interactive elements.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ritikbutola/portfolio" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .projects-page {
+            padding: 8rem 2rem 4rem;
+            min-height: 100vh;
+            background: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .project-header h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-color);
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .project-image {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-description {
+            color: var(--text-color);
+        }
+
+        .project-description p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .project-description ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-description ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .project-description ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-page {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .project-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            const dropdown = document.querySelector('.dropdown-content');
+            if (dropdown) {
+                dropdown.style.display = (dropdown.style.display === 'block' ? 'none' : 'block');
+            }
+        }
+        function setActiveTab() {
+            const path = window.location.pathname;
+            const activeTabElement = document.getElementById('activeTab');
+            if (path.includes('learning')) activeTabElement.textContent = 'Learning';
+            else if (path.includes('about')) activeTabElement.textContent = 'About';
+            else if (path.includes('resume')) activeTabElement.textContent = 'Resume';
+            else if (path.includes('work')) activeTabElement.textContent = 'Projects';
+            else if (path.includes('contact')) activeTabElement.textContent = 'Contact';
+            else activeTabElement.textContent = 'Home';
+            activeTabElement.classList.add('highlighted');
+        }
+        window.onload = setActiveTab;
+        const dropdownContent = document.createElement('div');
+        dropdownContent.className = 'dropdown-content';
+        dropdownContent.innerHTML = '<a href="/" id="homeLink">Home</a><a href="/learning.html" id="learningLink">Learning</a><a href="/about.html" id="aboutLink">About</a><a href="/resume.html" id="resumeLink">Resume</a><a href="/work.html" id="projectsLink">Projects</a><a href="/contact.html" id="contactLink">Contact</a>';
+        document.querySelector('.navbar').appendChild(dropdownContent);
+    </script>
+</body>
+</html> 

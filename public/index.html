@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritik Butola - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <button class="dropdown-button" onclick="toggleMenu()" style="order: 1;">☰</button>
+        <div class="nav-brand" style="order: 2; text-align: center;">Ritik Butola</div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/learning.html">Learning</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/resume.html">Resume</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </nav>
+    <div id="activeTab" class="active-tab" style="text-align: center;"></div>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="intro-content">
+            <div class="intro-text">
+                <h1>Hi, I'm <span class="highlight">Ritik Butola</span></h1>
+                <h2>Full Stack Developer</h2>
+                <p>Aspiring Full-Stack Developer skilled in MERN stack. Passionate about building scalable web applications and solving real-world problems efficiently.</p>
+                <div class="social-links">
+                    <a href="https://github.com/ritikbutola" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ritik-butola/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="cta-buttons">
+                    <a href="/work.html" class="btn primary-btn">View My Work</a>
+                    <a href="/contact.html" class="btn secondary-btn">Contact Me</a>
+                </div>
+            </div>
+            <div class="intro-media">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="images/profile/profile.jpg" alt="Ritik Butola" class="profile-photo" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent-color); box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); background: var(--secondary-color);" />
+                    </div>
+                    <div class="profile-info">
+                        <h3>Ritik Butola</h3>
+                        <p>Full Stack Developer</p>
+                        <div class="skills-preview">
+                            <span class="skill-tag">MERN Stack</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">React.js</span>
+                        </div>
+                        <div class="profile-links">
+                            <a href="resume.html" class="resume-link">
+                                <i class="fas fa-file-alt"></i>
+                                Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Preview Section -->
+    <section class="projects-preview">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <h3>Face Detection Attendance System</h3>
+                    <p>Developed an automated attendance system using face recognition with JavaScript, HTML, CSS, and Face API. Integrated machine learning-based techniques for real-time attendance marking.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Face API</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ritikbutola/Foolproof-Automated-Attendance-System" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Smart Health Monitoring System</h3>
+                    <p>IoT-based health monitoring system that tracks vital signs and provides real-time health analytics. Features include heart rate monitoring, temperature tracking, and emergency alerts.</p>
+                    <div class="project-tags">
+                        <span>IoT</span>
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Sensors</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ritikbutola/health-monitor" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Code Mentor AI</h3>
+                    <p>AI-powered coding assistant that helps developers with code suggestions, bug fixes, and best practices. Utilizes natural language processing for code understanding and generation.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>NLP</span>
+                        <span>Machine Learning</span>
+                        <span>API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ritikbutola/code-mentor-ai" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-projects">
+                <a href="work.html" class="btn primary-btn">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <div class="social-links">
+        <a href="https://github.com/ritikbutola" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ritik-butola/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            const dropdown = document.querySelector('.dropdown-content');
+            if (dropdown) {
+                dropdown.style.display = (dropdown.style.display === 'block' ? 'none' : 'block');
+            }
+        }
+        function setActiveTab() {
+            const path = window.location.pathname;
+            const activeTabElement = document.getElementById('activeTab');
+            if (path.includes('learning')) activeTabElement.textContent = 'Learning';
+            else if (path.includes('about')) activeTabElement.textContent = 'About';
+            else if (path.includes('resume')) activeTabElement.textContent = 'Resume';
+            else if (path.includes('work')) activeTabElement.textContent = 'Projects';
+            else if (path.includes('contact')) activeTabElement.textContent = 'Contact';
+            else activeTabElement.textContent = 'Home';
+            activeTabElement.classList.add('highlighted');
+        }
+        window.onload = setActiveTab;
+        const dropdownContent = document.createElement('div');
+        dropdownContent.className = 'dropdown-content';
+        dropdownContent.innerHTML = '<a href="/" id="homeLink">Home</a><a href="/learning.html" id="learningLink">Learning</a><a href="/about.html" id="aboutLink">About</a><a href="/resume.html" id="resumeLink">Resume</a><a href="/work.html" id="projectsLink">Projects</a><a href="/contact.html" id="contactLink">Contact</a>';
+        document.querySelector('.navbar').appendChild(dropdownContent);
+    </script>
+</body>
+</html> 

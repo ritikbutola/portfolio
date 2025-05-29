@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning - Ritik Butola</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <button class="dropdown-button" onclick="toggleMenu()" style="order: 1;">☰</button>
+        <div class="nav-brand" style="order: 2; text-align: center;">Ritik Butola</div>
+        <ul class="nav-links">
+            <li><a href="/" >Home</a></li>
+            <li><a href="/learning.html" class="active">Learning</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/resume.html">Resume</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </nav>
+    <div id="activeTab" class="active-tab" style="text-align: center;"></div>
+
+    <!-- Weekly Learning Section -->
+    <section class="learning-page">
+        <div class="container">
+            <h1>Weekly Learning Journey</h1>
+            
+            <!-- Videos Section -->
+            <div class="videos-section">
+                <h2>Learning Videos</h2>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <h3>Self Introduction</h3>
+                        <div class="video-placeholder" data-video="self-intro">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Click to watch Self Introduction Video</p>
+                        </div>
+                        <p class="video-description">A brief self introduction to set the stage for my learning journey.</p>
+                    </div>
+                    <div class="video-card">
+                        <h3>Extempore Session</h3>
+                        <div class="video-placeholder" data-video="extempore">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Click to watch Extempore Video</p>
+                        </div>
+                        <p class="video-description">Topic: The impact of technology on communication</p>
+                    </div>
+                    <div class="video-card">
+                        <h3>JAM Session</h3>
+                        <div class="video-placeholder" data-video="jam">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Click to watch JAM Video</p>
+                        </div>
+                        <p class="video-description">Just A Minute speech on current topics</p>
+                    </div>
+                </div>
+                <div class="video-grid single-center">
+                    <div class="video-card">
+                        <h3>Project Presentation</h3>
+                        <div class="video-placeholder" data-video="presentation">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Click to watch Project Presentation</p>
+                        </div>
+                        <p class="video-description">Technical presentation of semester project</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline" id="learning-timeline">
+                <!-- Timeline content will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <div class="social-links">
+        <a href="https://github.com/ritikbutola" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ritik-butola/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <style>
+        .learning-page {
+            padding: 8rem 2rem 4rem;
+            min-height: 100vh;
+            background: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .learning-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 2rem);
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 2rem);
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .timeline-week {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-details {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-details h4 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-details ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .timeline-details li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-details li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .timeline-quote {
+            background: rgba(var(--accent-rgb), 0.1);
+            padding: 1rem;
+            border-left: 4px solid var(--accent-color);
+            margin: 1rem 0;
+            font-style: italic;
+            color: var(--text-color);
+        }
+
+        .timeline-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .timeline-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-link:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 2rem;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 4rem;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                left: 2rem;
+            }
+
+            .timeline-content {
+                padding: 1.5rem;
+            }
+        }
+
+        .videos-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .videos-section h2 {
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: var(--secondary-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .video-placeholder {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 3rem 1rem;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .video-placeholder i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .video-placeholder p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .video-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-grid.single-center {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+    </style>
+
+    <script src="js/main.js"></script>
+    <script>
+    // Fetch and display weekly learning data
+    async function loadLearningData() {
+        try {
+            const response = await fetch('/api/learning');
+            const data = await response.json();
+            const timeline = document.getElementById('learning-timeline');
+            timeline.innerHTML = '';
+            data.weeks.forEach(week => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                let detailsHtml = '';
+                let videoLinksHtml = '';
+                // Add video links if available
+                if (week.video) {
+                    videoLinksHtml = `<div class=\"timeline-links\"><a href=\"${week.video}\" class=\"timeline-link\" target=\"_blank\">Watch Video</a></div>`;
+                } else if (week.videos) {
+                    videoLinksHtml = `<div class=\"timeline-links\">`;
+                    if (week.videos.self_intro) videoLinksHtml += `<a href=\"${week.videos.self_intro}\" class=\"timeline-link\" target=\"_blank\">View Video</a>`;
+                    if (week.videos.extempore) videoLinksHtml += `<a href=\"${week.videos.extempore}\" class=\"timeline-link\" target=\"_blank\">Extempore Video</a>`;
+                    if (week.videos.jam) videoLinksHtml += `<a href=\"${week.videos.jam}\" class=\"timeline-link\" target=\"_blank\">JAM Video</a>`;
+                    if (week.videos.project_presentation) videoLinksHtml += `<a href=\"${week.videos.project_presentation}\" class=\"timeline-link\" target=\"_blank\">Project Presentation</a>`;
+                    if (week.videos.resume) videoLinksHtml += `<a href=\"${week.videos.resume}\" class=\"timeline-link\" target=\"_blank\">View Resume</a>`;
+                    videoLinksHtml += `</div>`;
+                }
+                // Special handling for different week types
+                if (week.week === 4) {
+                    detailsHtml = `
+                        <div class=\"timeline-details\">
+                            <h4>Movie: ${week.content.movie}</h4>
+                            <div class=\"timeline-quote\">
+                                \"${week.content.favourite_dialogue}\"
+                            </div>
+                            <p><strong>Significance:</strong> ${week.content.dialogue_significance}</p>
+                            <h4>Learning Takeaways:</h4>
+                            <ul>
+                                ${week.content.learning_takeaways.map(point => `<li>${point}</li>`).join('')}
+                            </ul>
+                            <p><strong>Classroom Connection:</strong> ${week.content.classroom_concepts}</p>
+                        </div>
+                    `;
+                } else if (week.week === 6) {
+                    detailsHtml = `
+                        <div class=\"timeline-details\">
+                            <h4>Essays:</h4>
+                            <ul>
+                                <li><a href=\"https://docs.google.com/document/d/1FAs9C_yItkF7j0Hm4UjPH6Alb9MCQI7XXDOuk0VjTvQ/edit?usp=sharing\" target=\"_blank\">The Role of Artificial Intelligence in Modern Education</a></li>
+                                <li><a href=\"https://docs.google.com/document/d/1JYqosnwHf1eg9CjYdHmYRO7WUcNlItsxF6y9vZNrWKE/edit?usp=sharing\" target=\"_blank\">Climate Change and Its Impact on Global Health</a></li>
+                            </ul>
+                        </div>
+                    `;
+                } else if (week.week === 8) {
+                    detailsHtml = `
+                        <div class=\"timeline-details\">
+                            <div class=\"guidelines-grid\">
+                                <div>
+                                    <h4>Do's:</h4>
+                                    <ul>
+                                        ${week.guidelines.dos.map(item => `<li>${item}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4>Don'ts:</h4>
+                                    <ul>
+                                        ${week.guidelines.donts.map(item => `<li>${item}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                timelineItem.innerHTML = `
+                    <div class=\"timeline-dot\"></div>
+                    <div class=\"timeline-content\">
+                        <div class=\"timeline-week\">Week ${week.week}</div>
+                        <h3 class=\"timeline-title\">${week.title}</h3>
+                        <p class=\"timeline-text\">${typeof week.content === 'string' ? week.content : week.content.review || ''}</p>
+                        ${videoLinksHtml}
+                        ${detailsHtml}
+                    </div>
+                `;
+                timeline.appendChild(timelineItem);
+            });
+        } catch (error) {
+            console.error('Error loading learning data:', error);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', loadLearningData);
+
+    function toggleMenu() {
+        const dropdown = document.querySelector('.dropdown-content');
+        if (dropdown) {
+            dropdown.style.display = (dropdown.style.display === 'block' ? 'none' : 'block');
+        }
+    }
+    function setActiveTab() {
+        const path = window.location.pathname;
+        const activeTabElement = document.getElementById('activeTab');
+        if (path.includes('learning')) activeTabElement.textContent = 'Learning';
+        else if (path.includes('about')) activeTabElement.textContent = 'About';
+        else if (path.includes('resume')) activeTabElement.textContent = 'Resume';
+        else if (path.includes('work')) activeTabElement.textContent = 'Projects';
+        else if (path.includes('contact')) activeTabElement.textContent = 'Contact';
+        else activeTabElement.textContent = 'Home';
+        activeTabElement.classList.add('highlighted');
+    }
+    window.onload = setActiveTab;
+    const dropdownContent = document.createElement('div');
+    dropdownContent.className = 'dropdown-content';
+    dropdownContent.innerHTML = '<a href="/" id="homeLink">Home</a><a href="/learning.html" id="learningLink">Learning</a><a href="/about.html" id="aboutLink">About</a><a href="/resume.html" id="resumeLink">Resume</a><a href="/work.html" id="projectsLink">Projects</a><a href="/contact.html" id="contactLink">Contact</a>';
+    document.querySelector('.navbar').appendChild(dropdownContent);
+    </script>
+</body>
+</html> 
